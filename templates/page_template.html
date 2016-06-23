@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mayank Kedia's website">
+    <meta name="author" content="Mayank Kedia">
+
+    <title>Let's Play</title>
+    {% block head %}
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <!-- Custom CSS 
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-78545938-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- jQuery Version 1.12.3 -->
+    <script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    {% endblock %}
+
+    <style>
+
+
+
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+        {% block header %}
+        <div class="row">
+            <div class="page-header">
+                <h1> Let's Play<small> </small></h1>
+            </div>
+            <ol class="breadcrumb">
+              <li><a href="{{ url_for('hello') }}">Home</a></li>
+              <li><a href="{{ url_for('bot') }}">Chat bot</a></li>
+
+              <li><a href="https://moonsixpence.wordpress.com/">Blog</a></li>
+              <li><a href="https://github.com/mickeykedia/">Github</a></li>
+
+              <li><a href="https://linkedin.com/in/mayankkedia/">LinkedIn</a></li>
+              <li><a href="https://twitter.com/moonsixpence/">Twitter</a></li>
+
+              <li><a href="https://mickeykedia.github.io">Github Profile</a></li>
+            </ol>
+
+        </div>
+        {% endblock %}
+      <!-- Default panel contents -->
+      {% block content %}
+      {% endblock %}
+          <div class="flex-row row ">
+            
+           
+          </div>
+       
+
+    </div>
+
+
+
+    <script>
+
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+

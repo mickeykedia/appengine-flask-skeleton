@@ -1,0 +1,101 @@
+{% extends "page_template.html" %}
+{% block head %}
+{{ super() }}
+    <script src="https://npmcdn.com/rivescript@latest/dist/rivescript.min.js"></script>
+    <script>
+
+		// Handle the debug mode query string parameter.
+		var debugMode = false;
+		if (window.location.search.indexOf("debug=1") > -1) {
+			$("#toggle").val("Disable Debug Mode");
+			debugMode = true;
+		} else {
+			$("#toggle").val("Enable Debug Mode");
+		}
+
+		// Create our RiveScript interpreter.
+		var rs = new RiveScript({
+			debug_div: "debug",
+			debug:     debugMode
+		});
+
+		// Load our files from the brain/ folder.
+		rs.loadFile([
+			"{{ url_for('static', filename='begin.rs') }}", 
+			"{{ url_for('static', filename='rpg.rs') }}", 
+			"{{ url_for('static', filename='clients.rs') }}", 
+			"{{ url_for('static', filename='eliza.rs') }}", 
+			"{{ url_for('static', filename='myself.rs') }}"
+			], on_load_success, on_load_error);
+
+		function on_load_success () {
+			console.log("Loading completed!");
+			$("#message").removeAttr("disabled");
+			$("#message").attr("placeholder", "Send message");
+			$("#message").focus();
+
+			// Now to sort the replies!
+			rs.sortReplies();
+		}
+
+		function on_load_error (err) {
+			console.log("Loading error: " + err);
+		}
+
+		// Handle sending a message to the bot.
+		function sendMessage () {
+			var text = $("#message").val();
+			$("#message").val("");
+			$("#dialogue").append("<div><span class='user'>You:</span> " + text + "</div>");
+			try {
+			var reply = rs.reply("soandso", text);
+			reply = reply.replace(/\n/g, "<br>");
+			$("#dialogue").append("<div><span class='bot'>Bot:</span> " + reply + "</div>");
+			$("#dialogue").animate({ scrollTop: $("#dialogue")[0].scrollHeight }, 1000);
+			} catch(e) {
+				window.alert(e.message + "\n" + e.line);
+				console.log(e);
+			}
+
+			return false;
+		}
+
+		// Button that turns debugging on and off.
+		function toggleDebug () {
+			if (debugMode) {
+				window.location = "?debug=0";
+			} else {
+				window.location = "?debug=1";
+			}
+		};
+
+		function searchKeyPress(e){
+			e = e || window.event; 
+			if (e.keyCode == 13){
+				document.getElementById('chatButton').click();
+				return false
+			}
+			return true
+		};
+
+
+    </script
+{% endblock %}
+{% block content %}
+<div class="col-lg-12" id="dialogue">
+<h4>Chat Window</h4>
+
+</div>
+<div class="page-header">
+<h4></h4>
+</div>
+ <div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" class="form-control" id="message" onkeypress="return searchKeyPress(event)" placeholder="Send Message ... ">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="chatButton" onclick="sendMessage()">Go!</button>
+      </span>
+    </div>
+  </div>
+
+{% endblock %}}

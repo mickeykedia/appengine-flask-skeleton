@@ -12,6 +12,11 @@ def hello():
     """Return a friendly HTTP greeting."""
     return render_template('index.html') 
 
+@app.route('/bot')
+def bot():
+    """Return a friendly HTTP greeting."""
+    return render_template('rivescript_bot.html') 
+
 
 @app.errorhandler(404)
 def page_not_found(e):
