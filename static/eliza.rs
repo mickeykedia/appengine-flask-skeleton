@@ -6,6 +6,8 @@
 - That is interesting. Please continue.
 - Tell me more about that.
 - Does talking about this bother you?
+- Are you from MSAN ? 
+- Suh dude {weight=5)
 
 + [*] (sorry|apologize|apology) [*]
 - Please don't apologize.

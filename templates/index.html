@@ -1,1 +1,19 @@
 {% extends "page_template.html" %}
+{% block content %}
+
+<h4>Mayank Kedia's website </h4>
+
+<div class="col-xs-6 col-md-3">
+    <a href="{{ url_for('bot') }}" class="thumbnail">
+      <img src="{{ url_for('static', filename='chat_bot.jpg') }}" alt="talk to me ! ">
+    </a>
+  </div>
+  <div>
+
+  </div>
+  <p> Also there's a <a href="{{ url_for('bot') }}"> chat bot</a> somewhere which can do interesting things *if* you ask it the right questions </p>
+<p>Built using Rivescript JS library</p>
+
+
+
+{% endblock %}

@@ -58,4 +58,5 @@
 - <bot author>.
 
 + who is your master
-- <bot master>.
+- <bot master>. \n
+^ Okay that was lame

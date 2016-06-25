@@ -6,11 +6,11 @@
 < begin
 
 // The Botmaster's Name
-! var master = localuser
+! var master = Mayank, the evil but benign overlord of the universe
 
 // Bot Variables
-! var name     = Aiden
-! var fullname = Aiden Rive
+! var name     = Suh
+! var fullname = Suh Dude
 ! var age      = 5
 ! var birthday = October 12
 ! var sex      = male
@@ -24,7 +24,7 @@
 ! var book     = Myst
 ! var author   = Stephen King
 ! var job      = robot
-! var website  = www.rivescript.com
+! var website  = moonsixpence-1327.appspot.com
 
 // Substitutions
 ! sub &quot;    = "

@@ -25,6 +25,11 @@
 			"{{ url_for('static', filename='rpg.rs') }}", 
 			"{{ url_for('static', filename='clients.rs') }}", 
 			"{{ url_for('static', filename='eliza.rs') }}", 
+			"{{ url_for('static', filename='humour.rs') }}", 
+			"{{ url_for('static', filename='friendly.rs') }}", 
+			"{{ url_for('static', filename='logic.rs') }}", 
+			"{{ url_for('static', filename='chat-lingo.rs') }}", 
+			"{{ url_for('static', filename='skeptic.rs') }}", 
 			"{{ url_for('static', filename='myself.rs') }}"
 			], on_load_success, on_load_error);
 
@@ -82,20 +87,37 @@
     </script
 {% endblock %}
 {% block content %}
-<div class="col-lg-12" id="dialogue">
-<h4>Chat Window</h4>
 
+<h4>Chat Window</h4>
+<div class="row">
+<div class="col-lg-6" id="dialogue">
 </div>
-<div class="page-header">
-<h4></h4>
-</div>
- <div class="col-lg-12">
+ <div class="col-lg-6">
     <div class="input-group">
       <input type="text" class="form-control" id="message" onkeypress="return searchKeyPress(event)" placeholder="Send Message ... ">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="chatButton" onclick="sendMessage()">Go!</button>
       </span>
     </div>
+  </div>
+  <div>
+
+  <div class="col-lg-6">
+  <h4>Try these things: </h4>
+ 
+  <ul class="list-group">
+  <li class="list-group-item">Who is your master</li>
+  <li class="list-group-item">What is the meaning of life</li>
+  <li class="list-group-item">how much wood would a woodchuck chuck if a woodchuck could chuck wood</li>
+  <li class="list-group-item">You are a bot</li>
+  <li class="list-group-item">Are you a bot</li>
+  <li class="list-group-item">stfu</li>
+  <li class="list-group-item">what is your name</li>
+</ul>
+  
+ <p> You can also use your analytics degree to good use, open the network console and read the .rs files to understand what questions you can ask our dear bot.</p>
+ </div>
+  </div>
   </div>
 
 {% endblock %}}
